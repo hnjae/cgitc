@@ -1,51 +1,44 @@
-# Abbreviations sorted in alphabetically
-g                    git
+# g                    git
 
+## ga: git-add
 ga                   git add
-gaa                  git add --all
+gaA                  git add --all
 gapa                 git add --patch
 gau                  git add --update
 gav                  git add --verbose
-gap                  git apply
 
+# git-branch
 gb                   git branch
+gbm                  git branch -m
 gba                  git branch -a
-gbd                  git branch -d
-#gbda                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d
-gbD                  git branch -D
-gbl                  git blame -b -w
 gbnm                 git branch --no-merged
 gbr                  git branch --remote
+gbd                  git branch -d
+gbD                  git branch -D
+#gbda                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d
+
+# git-blame
+gbl                  git blame -b -w
+
+# git-bisect
 gbs                  git bisect
 gbsb                 git bisect bad
 gbsg                 git bisect good
 gbsr                 git bisect reset
 gbss                 git bisect start
 
+# gc: git-commit
 gc                   git commit -v
-gc!                  git commit -v --amend
-gcn!                 git commit -v --no-edit --amend
-gca                  git commit -v -a
-gca!                 git commit -v -a --amend
-gcan!                git commit -v -a --no-edit --amend
-gcans!               git commit -v -a -s --no-edit --amend
-gcam                 git commit -a -m
-gcsm                 git commit -s -m
-gcb                  git checkout -b
-gcf                  git config --list
-gcl                  git clone --recurse-submodules
-gclean               git clean -id
-#gpristine            git reset --hard && git clean -dfx
-gcm                  git checkout master
-gcd                  git checkout develop
+gca                  git commit -v --amend
+gca!                 git commit -v --amend --no-edit
 gcmsg                git commit -m
-gco                  git checkout
-gcount               git shortlog -sn
+
+# git cherry-pick
 gcp                  git cherry-pick
 gcpa                 git cherry-pick --abort
 gcpc                 git cherry-pick --continue
-gcs                  git commit -S
 
+# git-diff
 gd                   git diff
 gdca                 git diff --cached
 gdcw                 git diff --cached --word-diff
@@ -53,76 +46,52 @@ gdcw                 git diff --cached --word-diff
 #gds                  git diff --staged # NOTE: It conflicts with "git diff --stat"
 gdt                  git diff-tree --no-commit-id --name-only -r
 gdw                  git diff --word-diff
+gdl                  git difftool
+gds                  git diff --stat
 
-#gdv
-
+# git-fetch
 gf                   git fetch
 gfa                  git fetch --all --prune
 gfo                  git fetch origin
 
-gfg                  git ls-files | grep
+# gl: git-log
+gl                  git log --oneline --decorate
+gld                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
+glda                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --all
+glds                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --stat
+glg                 git log --oneline --decorate --graph
+glga                git log --oneline --decorate --graph --all
+glgf                git log --graph --decorate
+glgp                git log --decorate --oneline --graph --show-pulls --
+gls                 git log --stat
+glsp                git log --stat -p
+glcount             git shortlog -sn
 
-gg                   git gui citool
-gga                  git gui citool --amend
-
-#ggf
-#ggfl
-
-#ggl
-#ggp
-#ggpnp
-#ggu
-
-#ggpur                ggu
-#ggpull               git pull origin "$(git_current_branch)"
-#ggpush               git push origin "$(git_current_branch)"
-
-#ggsup                git branch --set-upstream-to=origin/$(git_current_branch)
-#gpsup                git push --set-upstream origin $(git_current_branch)
-
-ghh                  git help
-
-gignore              git update-index --assume-unchanged
-gignored             git ls-files -v | grep "^[[:lower:]]"
-#git-svn-dcommit-push git svn dcommit && git push github master:svntrunk
-
-gk                   \gitk --all --branches
-#gke                  \gitk --all $(git log -g --pretty=%h)
-
-gl                   git pull
-glg                  git log --stat
-glgp                 git log --stat -p
-glgg                 git log --graph
-glgga                git log --graph --decorate --all
-glgm                 git log --graph --max-count=10
-glo                  git log --oneline --decorate
-# glol                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-# glols                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --stat
-# glola                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
-glod                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
-gloda                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --all
-glods                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --stat
-glog                 git log --oneline --decorate --graph
-gloga                git log --oneline --decorate --graph --all
-#glp
-
+# git-merge
 gm                   git merge
 gmom                 git merge origin/master
 gmt                  git mergetool --no-prompt
 gmtvim               git mergetool --no-prompt --tool=vimdiff
 gmum                 git merge upstream/master
-gma                  git merge --abort
+gmA                  git merge --abort
 
+# git-push
 gp                   git push
 gpd                  git push --dry-run
 gpf                  git push --force-with-lease
 gpf!                 git push --force
 #gpoat                git push origin --all && git push origin --tags
+#gpsup                git push --set-upstream origin $(git_current_branch)
 gpu                  git push upstream
 gpv                  git push -v
+ggpush               git push --set-upstream origin HEAD
+gp!                  git push --force-with-lease
 
+# git-remote
 gr                   git remote
 gra                  git remote add
+
+# grb: git-rebase
 grb                  git rebase
 grba                 git rebase --abort
 grbc                 git rebase --continue
@@ -130,74 +99,102 @@ grbd                 git rebase develop
 grbi                 git rebase -i
 grbm                 git rebase master
 grbs                 git rebase --skip
+
+# git-revert
 grev                 git revert
+
+# git-reset
 grh                  git reset
 grhh                 git reset --hard
 #groh                 git reset origin/$(git_current_branch) --hard
+#gpristine            git reset --hard && git clean -dfx
+grhd                 git reset HEAD
+grhhd                git reset --hard HEAD
+grhh1                git reset --hard HEAD~1
+gru                  git reset --
+
+# git-rm
 grm                  git rm
 grmc                 git rm --cached
+
+# git-remote
 grmv                 git remote rename
 grrm                 git remote remove
-grs                  git restore
 grset                git remote set-url
-grss                 git restore --source
-#grt                  cd "$(git rev-parse --show-toplevel || echo .)"
-gru                  git reset --
 grup                 git remote update
 grv                  git remote -v
 
+# git-restore
+grs                  git restore
+grss                 git restore --source
+
+# gsu: git-submodule
+gsui                  git submodule init
+gsuu                  git submodule update
+gsur                  git submodule update --recursive
+
+# gs: git-status
+gs                   git status -s
 gsb                  git status -sb
-gsd                  git svn dcommit
+gss                  git status
+
+# gsh: git-show
 gsh                  git show
-gsi                  git submodule init
-gsps                 git show --pretty=short --show-signature
-gsr                  git svn rebase
-gss                  git status -s
-gst                  git status
+gshps                git show --pretty=short --show-signature
 
-#gsta                 git stash save
-
-gstaa                git stash apply
-gstc                 git stash clear
-gstd                 git stash drop
+# gst: git-stash
+gst                  git stash
 gstl                 git stash list
 gstp                 git stash pop
-gsts                 git stash show --text
-gstall               git stash --all
-gsu                  git submodule update
-gsw                  git switch
+# gsta                 git stash save
+# gstaa                git stash apply
+# gstc                 git stash clear
+# gstd                 git stash drop
+# gsts                 git stash show --text
+# gstall               git stash --all
+
+
+# gsw                  git switch
+gsw                  git branch | sed 's/^[[:space:]*]*//' | fzf --header="current: $(git branch --show-current)" --preview='git log --oneline --color=always {}' | xargs git switch
 gswc                 git switch -c
 
+# git-tag
 gts                  git tag -s
 gtv                  git tag | sort -V
 #gtl                  gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl
 
-gunignore            git update-index --no-assume-unchanged
-#gunwip               git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1
+# git-pull
+gL                   git pull
 gup                  git pull --rebase
 gupv                 git pull --rebase -v
 gupa                 git pull --rebase --autostash
 gupav                git pull --rebase --autostash -v
 glum                 git pull upstream master
+#ggpull               git pull origin "$(git_current_branch)"
+#ggpush               git push origin "$(git_current_branch)"
 
+# git-clone
+gcl                  git clone --depth 1 --recurse-submodules --shallow-submodules
+gcL                  git clone --recurse-submodules
+
+# misc
+#ggsup                git branch --set-upstream-to=origin/$(git_current_branch)
+gcf                  git config --list
+gclean               git clean -id
+gfg                  git ls-files | grep
+gg                   git gui citool
+gga                  git gui citool --amend
+ghh                  git help
+gignored             git ls-files -v | grep "^[[:lower:]]"
 gwch                 git whatchanged -p --abbrev-commit --pretty=medium
+gunignore            git update-index --no-assume-unchanged
+gignore              git update-index --assume-unchanged
+grl                  git reflog
+# gap                  git apply
+
+#
+# new-commands
+#
+grt                  cd "$(git rev-parse --show-toplevel || echo .)"
 #gwip                 git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"
-
-#git_current_branch
-
-#
-# cgitc extensions
-#
-gbm                  git branch -m
-gcaa                 git commit -v -a --amend
-gdl                  git difftool
-gds                  git diff --stat
-ggpush               git push --set-upstream origin HEAD
-gp!                  git push --force-with-lease
-grhd                 git reset HEAD
-grhhd                git reset --hard HEAD
-grhh1                git reset --hard HEAD~1
-gsta                 git stash
-gc-                  git checkout -
-glogp                git log --decorate --oneline --graph --show-pulls --
-gsur                 git submodule update --recursive
+#gunwip               git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1
