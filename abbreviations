@@ -15,7 +15,7 @@ gbnm                 git branch --no-merged
 gbr                  git branch --remote
 gbd                  git branch -d
 gbD                  git branch -D
-#gbda                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d
+gbda!                git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop|dev)\s*$)" | command xargs -n 1 git branch -d
 
 # git-blame
 gbl                  git blame -b -w
@@ -42,7 +42,6 @@ gcpc                 git cherry-pick --continue
 gd                   git diff
 gdca                 git diff --cached
 gdcw                 git diff --cached --word-diff
-#gdct                 git describe --tags $(git rev-list --tags --max-count=1)
 #gds                  git diff --staged # NOTE: It conflicts with "git diff --stat"
 gdt                  git diff-tree --no-commit-id --name-only -r
 gdw                  git diff --word-diff
@@ -70,10 +69,10 @@ glcount             git shortlog -sn
 # git-merge
 gm                   git merge
 gmom                 git merge origin/master
-gmt                  git mergetool --no-prompt
-gmtvim               git mergetool --no-prompt --tool=vimdiff
 gmum                 git merge upstream/master
 gmA                  git merge --abort
+gmt                  git mergetool --no-prompt
+gmtvim               git mergetool --no-prompt --tool=vimdiff
 
 # git-push
 gp                   git push
@@ -107,7 +106,6 @@ grev                 git revert
 grh                  git reset
 grhh                 git reset --hard
 #groh                 git reset origin/$(git_current_branch) --hard
-#gpristine            git reset --hard && git clean -dfx
 grhd                 git reset HEAD
 grhhd                git reset --hard HEAD
 grhh1                git reset --hard HEAD~1
@@ -161,7 +159,6 @@ gswc                 git switch -c
 # git-tag
 gts                  git tag -s
 gtv                  git tag | sort -V
-#gtl                  gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl
 
 # git-pull
 gL                   git pull
@@ -191,10 +188,15 @@ gunignore            git update-index --no-assume-unchanged
 gignore              git update-index --assume-unchanged
 grl                  git reflog
 # gap                  git apply
+gpristine!           git reset --hard && git clean -dfx
+gdct                 git describe --tags $(git rev-list --tags --max-count=1)
+gke                  \gitk --all $(git log -g --pretty=%h)
+gpoat                git push origin --all && git push origin --tags
+gtl                  gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl
 
 #
 # new-commands
 #
 grt                  cd "$(git rev-parse --show-toplevel || echo .)"
-#gwip                 git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"
-#gunwip               git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1
+gwip                 git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"
+gunwip               git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1

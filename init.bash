@@ -5,11 +5,11 @@ __cgitc() {
 
   while read -r line; do
     # Strip out comments
-    IFS='#' read -ra arr <<< "$line"
+    IFS='#' read -ra arr <<<"$line"
     line=${arr[0]}
 
     # Skip empty lines
-    if [[ -z "${line// }" ]]; then
+    if [[ -z "${line// /}" ]]; then
       continue
     fi
 
@@ -21,10 +21,9 @@ __cgitc() {
 
     # shellcheck disable=SC2139
     alias "$key"="$value"
-  done < "${1}"
+  done <"${1}"
 }
 
 __cgitc "$(dirname "${BASH_SOURCE[0]}")/abbreviations"
-__cgitc "$(dirname "${BASH_SOURCE[0]}")/abbreviations.bash"
 
 unset -f __cgitc
