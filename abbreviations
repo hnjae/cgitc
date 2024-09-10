@@ -59,7 +59,8 @@ gll                 git log --oneline --decorate
 gld                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
 glda                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --all
 glds                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --stat
-glg                 git log --oneline --decorate --graph
+glg                 git log --oneline --decorate --graph -19
+glgg                git log --oneline --decorate --graph
 glga                git log --oneline --decorate --graph --all
 glgf                git log --graph --decorate
 glgp                git log --decorate --oneline --graph --show-pulls --
