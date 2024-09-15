@@ -25,15 +25,18 @@ cgitc is fork of [oh-my-zsh]'s [git plugin].
 
 Installation
 --------
+
 You can install cgitc via various plugin managers.
 
 #### Bash
+
 ```bash
 git clone https://github.com/simnalamburt/cgitc.git --depth=1 ~/.cgitc
 cat <<< 'source ~/.cgitc/init.bash' >> ~/.bashrc
 ```
 
 #### Zsh, [zinit]
+
 ```zsh
 zinit light simnalamburt/cgitc
 
@@ -42,6 +45,7 @@ zinit light simnalamburt/zsh-expand-all
 ```
 
 #### Fish, [chips]
+
 ```yaml
 # Update your '~/.config/chips/plugin.yaml'
 github:
@@ -49,6 +53,7 @@ github:
 ```
 
 #### Fish, [oh-my-fish]
+
 ```fish
 omf install https://github.com/simnalamburt/cgitc
 ```
