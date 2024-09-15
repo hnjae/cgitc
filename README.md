@@ -2,7 +2,7 @@
   <img alt="Close Git Combat" src="https://simnalamburt.github.io/cgitc/emblem.svg">
 </h1>
 
-**cgitc** is set of useful git aliases for [bash], [zsh] and [fish]. It provides
+**cgitc** is set of useful git aliases for [bash], [zsh]. It provides
 professional and swift git usage.
 
 ```
@@ -44,20 +44,6 @@ zinit light simnalamburt/cgitc
 zinit light simnalamburt/zsh-expand-all
 ```
 
-#### Fish, [chips]
-
-```yaml
-# Update your '~/.config/chips/plugin.yaml'
-github:
-- simnalamburt/cgitc
-```
-
-#### Fish, [oh-my-fish]
-
-```fish
-omf install https://github.com/simnalamburt/cgitc
-```
-
 <br>
 
 --------
@@ -67,10 +53,7 @@ and the [Apache License (Version 2.0)]. *cgitc emblem* © 2017 [XT]. See
 
 [bash]: https://www.gnu.org/software/bash/
 [zsh]: https://www.zsh.org
-[fish]: https://fishshell.com
 [zinit]: https://github.com/zdharma/zinit
-[chips]: https://github.com/xtendo-org/chips
-[oh-my-fish]: https://github.com/oh-my-fish/oh-my-fish
 [oh-my-zsh]: http://ohmyz.sh
 [git plugin]: https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
 [MIT license]: LICENSE-MIT
