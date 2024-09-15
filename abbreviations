@@ -1,3 +1,5 @@
+# Note: ! 를 force 용도로, 대문자를 조심해야할 커맨드 용도로 사용할 것.
+
 # g                    git
 
 ## ga: git-add
@@ -15,7 +17,7 @@ gbnm                 git branch --no-merged
 gbr                  git branch --remote
 gbd                  git branch -d
 gbD                  git branch -D
-gbda!                git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop|dev)\s*$)" | command xargs -n 1 git branch -d
+gbdA                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop|dev)\s*$)" | command xargs -n 1 git branch -d
 
 # git-blame
 gbl                  git blame -b -w
@@ -54,19 +56,19 @@ gfa                  git fetch --all --prune
 gfo                  git fetch origin
 
 # gl: git-log
-gl                  git log --oneline --decorate -19
-gll                 git log --oneline --decorate
-gld                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
-glda                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --all
-glds                git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --stat
-glg                 git log --oneline --decorate --graph -19
-glgg                git log --oneline --decorate --graph
-glga                git log --oneline --decorate --graph --all
-glgf                git log --graph --decorate
-glgp                git log --decorate --oneline --graph --show-pulls --
-gls                 git log --stat
-glsp                git log --stat -p
-glcount             git shortlog -sn
+gl                   git log --oneline --decorate -19
+gll                  git log --oneline --decorate
+gld                  git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
+glda                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --all
+glds                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --stat
+glg                  git log --oneline --decorate --graph -19
+glgg                 git log --oneline --decorate --graph
+glga                 git log --oneline --decorate --graph --all
+glgf                 git log --graph --decorate
+glgp                 git log --decorate --oneline --graph --show-pulls --
+gls                  git log --stat
+glsp                 git log --stat -p
+glcount              git shortlog -sn
 
 # git-merge
 gm                   git merge
@@ -91,11 +93,10 @@ gp!                  git push --force-with-lease
 
 # grb: git-rebase
 grb                  git rebase
-grba                 git rebase --abort
+grbA                 git rebase --abort
 grbc                 git rebase --continue
-grbd                 git rebase develop
 grbi                 git rebase -i
-grbm                 git rebase master
+grbm                 git rebase main
 grbs                 git rebase --skip
 
 # git-revert
@@ -103,12 +104,12 @@ grev                 git revert
 
 # gr: git-reset
 gr                   git reset
-grH                  git reset --hard
 grhd                 git reset HEAD
+grH                  git reset --hard
 grHhd                git reset --hard HEAD
 grHh1                git reset --hard HEAD~1
 # gru                  git reset --
-#groh                 git reset origin/$(git_current_branch) --hard
+# groh                 git reset origin/$(git_current_branch) --hard
 
 # grm: git-rm
 grm                  git rm
@@ -116,22 +117,22 @@ grmc                 git rm --cached
 
 # git-remote
 # gre: git-remote
-gre                   git remote
-grea                  git remote add
-gremv                 git remote rename
-grerm                 git remote remove
-greset                git remote set-url
-greup                 git remote update
-grev                  git remote -v
+gre                  git remote
+grea                 git remote add
+gremv                git remote rename
+grerm                git remote remove
+greset               git remote set-url
+greup                git remote update
+grev                 git remote -v
 
 # grs: git-restore
 grs                  git restore
 grss                 git restore --source
 
 # gsu: git-submodule
-gsui                  git submodule init
-gsuu                  git submodule update
-gsur                  git submodule update --recursive
+gsui                 git submodule init
+gsuu                 git submodule update
+gsur                 git submodule update --recursive
 
 # gs: git-status
 gs                   git status -s
@@ -154,7 +155,7 @@ gstp                 git stash pop
 # gstall               git stash --all
 
 
-# gsw                  git switch
+# gsw                 git switch
 gsw                  git branch | sed 's/^[[:space:]*]*//' | fzf --header="current: $(git branch --show-current)" --preview='git log --oneline --color=always {}' | xargs git switch
 gswc                 git switch -c
 
@@ -166,11 +167,11 @@ gtv                  git tag | sort -V
 gpu                  git pull
 gpur                 git pull --rebase
 gpurv                git pull --rebase -v
-gpura                 git pull --rebase --autostash
-gpurav                git pull --rebase --autostash -v
+gpura                git pull --rebase --autostash
+gpurav               git pull --rebase --autostash -v
 # glum                 git pull upstream master
-#ggpull               git pull origin "$(git_current_branch)"
-#ggpush               git push origin "$(git_current_branch)"
+# ggpull               git pull origin "$(git_current_branch)"
+# ggpush               git push origin "$(git_current_branch)"
 
 # git-clone
 gcl                  git clone --depth 1 --recurse-submodules --shallow-submodules
