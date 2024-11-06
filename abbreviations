@@ -1,4 +1,6 @@
-# Note: ! 를 force 용도로, 대문자를 조심해야할 커맨드 용도로 사용할 것.
+# 단축키 명명 도식:
+#   * ! 는 force 
+#   * 대문자는 조심해야할 커맨드 
 
 # g                    git
 
@@ -31,13 +33,14 @@ gbss                 git bisect start
 
 # gc: git-commit
 gc                   git commit -v
-gca                  git commit -v --amend
-gca!                 git commit -v --amend --no-edit
+## gcA: 잘못됬을 경우 reflog 로 원 커밋 다시 찾아야하므로 대문자행.
+gcA                  git commit -v --amend
+gcAn                 git commit -v --amend --no-edit 
 gcmsg                git commit -m
 
 # git cherry-pick
 gcp                  git cherry-pick
-gcpa                 git cherry-pick --abort
+gcpA                 git cherry-pick --abort
 gcpc                 git cherry-pick --continue
 
 # git-diff
@@ -63,14 +66,13 @@ glda                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset
 glds                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --stat
 glg                  git log --oneline --decorate --graph -19
 glgg                 git log --oneline --decorate --graph
-glga                 git log --oneline --decorate --graph --all
 glgf                 git log --graph --decorate
-glgp                 git log --decorate --oneline --graph --show-pulls --
-gls                  git log --stat
+glgp                 git log --graph --decorate --oneline --show-pulls --
+gls                  git log --stat | bat --style=plain
 glsp                 git log --stat -p
 glcount              git shortlog -sn
 
-# git-merge
+# gm: git-merge
 gm                   git merge
 gmom                 git merge origin/master
 gmum                 git merge upstream/master
@@ -78,17 +80,15 @@ gmA                  git merge --abort
 gmt                  git mergetool --no-prompt
 gmtvim               git mergetool --no-prompt --tool=vimdiff
 
-# gp: git-push
-gp                   git push
-gpd                  git push --dry-run
-gpf                  git push --force-with-lease
-gpf!                 git push --force
+# gP: git-push
+gP                   git push
+gP!                  git push --force-with-lease
+gPd                  git push --dry-run
 #gpoat                git push origin --all && git push origin --tags
 #gpsup                git push --set-upstream origin $(git_current_branch)
-gpu                  git push upstream
-gpv                  git push -v
-ggpush               git push --set-upstream origin HEAD
-gp!                  git push --force-with-lease
+gPu                  git push upstream
+gPv                  git push -v
+# ggpush               git push --set-upstream origin HEAD
 
 
 # grb: git-rebase
@@ -107,7 +107,7 @@ gr                   git reset
 grhd                 git reset HEAD
 grH                  git reset --hard
 grHhd                git reset --hard HEAD
-grHh1                git reset --hard HEAD~1
+grHhd1               git reset --hard HEAD~1
 # gru                  git reset --
 # groh                 git reset origin/$(git_current_branch) --hard
 
@@ -163,19 +163,19 @@ gswc                 git switch -c
 gts                  git tag -s
 gtv                  git tag | sort -V
 
-# git-pull
-gpu                  git pull
-gpur                 git pull --rebase
-gpurv                git pull --rebase -v
-gpura                git pull --rebase --autostash
-gpurav               git pull --rebase --autostash -v
+# gpl: git-pull
+gplf                 git pull --ff-only
+gplr                 git pull --rebase
+gplrv                git pull --rebase -v
+gplra                git pull --rebase --autostash
+gplrav               git pull --rebase --autostash -v
 # glum                 git pull upstream master
 # ggpull               git pull origin "$(git_current_branch)"
 # ggpush               git push origin "$(git_current_branch)"
 
 # git-clone
-gcl                  git clone --depth 1 --recurse-submodules --shallow-submodules
-gcL                  git clone --recurse-submodules
+gcl                  git clone --recurse-submodules
+gclm                 git clone --depth 1 --recurse-submodules --shallow-submodules
 
 # misc
 #ggsup                git branch --set-upstream-to=origin/$(git_current_branch)
@@ -183,8 +183,8 @@ gcf                  git config --list
 gclean               git clean -id
 gfg                  git ls-files | grep
 gg                   git gui citool
-gga                  git gui citool --amend
-ghh                  git help
+ggA                  git gui citool --amend
+ghp                  git help
 gignored             git ls-files -v | grep "^[[:lower:]]"
 gwch                 git whatchanged -p --abbrev-commit --pretty=medium
 gunignore            git update-index --no-assume-unchanged
