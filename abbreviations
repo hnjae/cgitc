@@ -1,6 +1,6 @@
 # 단축키 명명 도식:
-#   * ! 는 force 
-#   * 대문자는 조심해야할 커맨드 
+#   * ! 는 force
+#   * 대문자는 조심해야할 커맨드
 
 # g                    git
 
@@ -35,7 +35,7 @@ gbss                 git bisect start
 gc                   git commit -v
 ## gcA: 잘못됬을 경우 reflog 로 원 커밋 다시 찾아야하므로 대문자행.
 gcA                  git commit -v --amend
-gcAn                 git commit -v --amend --no-edit 
+gcAn                 git commit -v --amend --no-edit
 gcmsg                git commit -m
 
 # git cherry-pick
