@@ -45,13 +45,13 @@ gcpc                 git cherry-pick --continue
 
 # git-diff
 gd                   git diff
-gdca                 git diff --cached
-gdcw                 git diff --cached --word-diff
-#gds                  git diff --staged # NOTE: It conflicts with "git diff --stat"
+gd                   git diff --word-diff
+gds                  git diff --staged
+gdsw                 git diff --staged --word-diff
+#gds                 git diff --staged # NOTE: It conflicts with "git diff --stat"
 gdt                  git diff-tree --no-commit-id --name-only -r
-gdw                  git diff --word-diff
 gdl                  git difftool
-gds                  git diff --stat
+gdst                 git diff --stat
 
 # git-fetch
 gf                   git fetch
