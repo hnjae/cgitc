@@ -11,15 +11,15 @@ gapa                 git add --patch
 gau                  git add --update
 gav                  git add --verbose
 
-# git-branch
+# gb: git-branch
 gb                   git branch
-gbm                  git branch -m
-gba                  git branch -a
+gbm                  git branch --move
+gba                  git branch --all
 gbnm                 git branch --no-merged
 gbr                  git branch --remote
-gbd                  git branch -d
-gbD                  git branch -D
-gbdA                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop|dev)\s*$)" | command xargs -n 1 git branch -d
+gbD                  git branch --delete
+gbD!                 git branch --delete --force
+gbDa                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop|dev)\s*$)" | command xargs -n 1 git branch -d
 
 # git-blame
 gbl                  git blame -b -w
