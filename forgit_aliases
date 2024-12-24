@@ -1,0 +1,24 @@
+# shellcheck disable=2148
+
+export forgit_add=ga # defaults
+export forgit_branch_delete=gbD
+export forgit_blame=gbl       # defaults
+export forgit_cherry_pick=gcp # defaults
+export forgit_diff=gdf
+export forgit_log=glf
+export forgit_rebase=grb # defaults
+export forgit_revert_commit=grev
+export forgit_reset_head=grhd
+export forgit_checkout_file=grs # git-restore
+export forgit_stash_show=gsts
+export forgit_stash_push=gstP
+export forgit_checkout_branch=gsw # git-switch
+export forgit_checkout_tag=gswt
+export forgit_checkout_commit=gswco
+
+export forgit_reflog=greflog
+export forgit_clean=gclean
+export forgit_ignore=gignoredgenerate
+export forgit_fixup=gfixup
+
+# vi:ft=sh:

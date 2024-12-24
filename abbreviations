@@ -5,7 +5,8 @@
 # g                    git
 
 ## ga: git-add
-ga                   git add
+# ga                 git add
+# ga (forgit)        interactive `git add` selector
 gaA                  git add --all
 gapa                 git add --patch
 gau                  git add --update
@@ -17,12 +18,14 @@ gbm                  git branch --move
 gba                  git branch --all
 gbnm                 git branch --no-merged
 gbr                  git branch --remote
-gbD                  git branch --delete
+# gbD                git branch --delete
+# gbD (forgit)
 gbD!                 git branch --delete --force
 gbDa                 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|main|develop|dev)\s*$)" | command xargs -n 1 git branch -d
 
 # git-blame
-gbl                  git blame -b -w
+# gbl                  git blame -b -w
+# gbl (forgit)
 
 # git-bisect
 gbs                  git bisect
@@ -39,16 +42,18 @@ gcAn                 git commit -v --amend --no-edit
 gcmsg                git commit -m
 
 # git cherry-pick
-gcp                  git cherry-pick
+# gcp                  git cherry-pick
+# gcp (forgit)
 gcpA                 git cherry-pick --abort
 gcpc                 git cherry-pick --continue
 
 # git-diff
 gd                   git diff
-gd                   git diff --word-diff
+# gdf (forgit)
+gdw                  git diff --word-diff
 gds                  git diff --staged
 gdsw                 git diff --staged --word-diff
-#gds                 git diff --staged # NOTE: It conflicts with "git diff --stat"
+# gds                git diff --staged # NOTE: It conflicts with "git diff --stat"
 gdt                  git diff-tree --no-commit-id --name-only -r
 gdl                  git difftool
 gdst                 git diff --stat
@@ -60,6 +65,7 @@ gfo                  git fetch origin
 
 # gl: git-log
 gl                   git log --oneline --decorate -19
+# glf                interactive `git log` viewer (forgit)
 gll                  git log --oneline --decorate
 gld                  git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
 glda                 git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short --all
@@ -92,7 +98,8 @@ gPv                  git push -v
 
 
 # grb: git-rebase
-grb                  git rebase
+# grb                git rebase
+# grb (forgit)       interactive `git rebase -i` selector (forgit)
 grbA                 git rebase --abort
 grbc                 git rebase --continue
 grbi                 git rebase -i
@@ -100,11 +107,13 @@ grbm                 git rebase main
 grbs                 git rebase --skip
 
 # git-revert
-grev                 git revert
+# grev                 git revert
+# grev (forgit)
 
 # gr: git-reset
 gr                   git reset
-grhd                 git reset HEAD
+# grhd                 git reset HEAD
+# grhd (forgit)
 grH                  git reset --hard
 grHhd                git reset --hard HEAD
 grHhd1               git reset --hard HEAD~1
@@ -126,7 +135,8 @@ greup                git remote update
 grev                 git remote -v
 
 # grs: git-restore
-grs                  git restore
+# grs                  git restore
+# grs (forgit)
 grss                 git restore --source
 
 # gsu: git-submodule
@@ -146,7 +156,10 @@ gshps                git show --pretty=short --show-signature
 # gst: git-stash
 gst                  git stash
 gstl                 git stash list
+# gsts (forgit) - show
+# gstP (forgit) - push
 gstp                 git stash pop
+
 # gsta                 git stash save
 # gstaa                git stash apply
 # gstc                 git stash clear
@@ -154,9 +167,12 @@ gstp                 git stash pop
 # gsts                 git stash show --text
 # gstall               git stash --all
 
-
-# gsw                 git switch
-gsw                  git branch | sed 's/^[[:space:]*]*//' | fzf --header="current: $(git branch --show-current)" --preview='git log --oneline --color=always {}' | xargs git switch
+# gsw: git-switch
+# gsw                git switch
+# gsw                  git branch | sed 's/^[[:space:]*]*//' | fzf --header="current: $(git branch --show-current)" --preview='git log --oneline --color=always {}' | xargs git switch
+# gsw (forgit)
+# gswt (forgit)
+# gswco (forgit)
 gswc                 git switch -c
 
 # gt: git-tag
@@ -180,7 +196,6 @@ gclm                 git clone --depth 1 --recurse-submodules --shallow-submodul
 # misc
 #ggsup                git branch --set-upstream-to=origin/$(git_current_branch)
 gcf                  git config --list
-gclean               git clean -id
 gfg                  git ls-files | grep
 gg                   git gui citool
 ggA                  git gui citool --amend
@@ -189,13 +204,20 @@ gignored             git ls-files -v | grep "^[[:lower:]]"
 gwch                 git whatchanged -p --abbrev-commit --pretty=medium
 gunignore            git update-index --no-assume-unchanged
 gignore              git update-index --assume-unchanged
-grl                  git reflog
 # gap                  git apply
 gpristine!           git reset --hard && git clean -dfx
 gdct                 git describe --tags $(git rev-list --tags --max-count=1)
 gke                  \gitk --all $(git log -g --pretty=%h)
 gpoat                git push origin --all && git push origin --tags
 gtl                  gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl
+
+# misc (using forgit)
+# gclean               git clean -id
+# grl                  git reflog
+# gclean (forgit)
+# greflog (forgit) `git reflog`
+# gignoredgenerate (forgit)
+# gfixup (forgit)
 
 #
 # new-commands

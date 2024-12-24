@@ -27,3 +27,5 @@ __cgitc() {
 __cgitc "$(dirname "${BASH_SOURCE[0]}")/abbreviations"
 
 unset -f __cgitc
+
+. "${0%/*}/forgit_aliases"

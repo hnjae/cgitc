@@ -29,3 +29,5 @@ __cgitc "${0%/*}/abbreviations"
 
 unset -f __cgitc
 unset __CGITC_CMD
+
+. "${0%/*}/forgit_aliases"
