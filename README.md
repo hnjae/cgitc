@@ -5,6 +5,8 @@
 **cgitc** is set of useful git aliases for [bash], [zsh]. It provides
 professional and swift git usage.
 
+`cgitc` is designed to work with [`forgit`](https://github.com/wfxr/forgit). It sets up `forgit` aliases using the same naming convention as other `cgitc` aliases. If you use `forgit`, make sure to source `cgitc` before `forgit`.
+
 ```
 g    = git
 
