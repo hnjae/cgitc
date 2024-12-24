@@ -2,8 +2,7 @@
   <img alt="Close Git Combat" src="https://simnalamburt.github.io/cgitc/emblem.svg">
 </h1>
 
-**cgitc** is set of useful git aliases for [bash], [zsh]. It provides
-professional and swift git usage.
+My personal git aliases for bash and zsh.
 
 `cgitc` is designed to work with [`forgit`](https://github.com/wfxr/forgit). It sets up `forgit` aliases using the same naming convention as other `cgitc` aliases. If you use `forgit`, make sure to source `cgitc` before `forgit`.
 
