@@ -106,7 +106,7 @@ grbi                 git rebase -i
 grbm                 git rebase main
 grbs                 git rebase --skip
 
-# git-revert
+# grev: git-revert
 # grev                 git revert
 # grev (forgit)
 
@@ -138,6 +138,7 @@ grev                 git remote -v
 # grs                  git restore
 # grs (forgit)
 grss                 git restore --source
+grst                 git restore --staged
 
 # gsu: git-submodule
 gsui                 git submodule init
@@ -153,12 +154,12 @@ gss                  git status
 gsh                  git show
 gshps                git show --pretty=short --show-signature
 
-# gst: git-stash
-gst                  git stash
-gstl                 git stash list
-# gsts (forgit) - show
-# gstP (forgit) - push
-gstp                 git stash pop
+# gsh: git-stash
+gsh                  git stash
+gshl                 git stash list
+# gshs (forgit) - show
+# gshP (forgit) - push
+gshp                 git stash pop
 
 # gsta                 git stash save
 # gstaa                git stash apply
